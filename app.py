@@ -15,7 +15,7 @@ if api_key:
 
         if st.button("Enviar") and pergunta:
             resposta = client.responses.create(
-                model="gpt-5.5",
+                model="gpt-5-mini",
                 input=pergunta
             )
 
