@@ -9,16 +9,18 @@ api_key = st.text_input("Digite sua chave da API Gemini:", type="password")
 
 if api_key:
     try:
-        cliente = genai.Client(api_key=api_key)
+        client = genai.Client(api_key=api_key)
 
         pergunta = st.text_input("Pergunte alguma coisa:")
 
-        if st.button("Enviar") and pergunta:
-            resposta = cliente.models.generate_content(
-                model="gemini-2.5-flash",
-                contents=pergunta
-            )
-            st.write(resposta.text)
+        if st.button("Enviar"):
+            if pergunta:
+                response = client.models.generate_content(
+                    model="gemini-2.5-flash",
+                    contents=pergunta,
+                )
+
+                st.write(response.text)
 
     except Exception as e:
-        st.error(f"Erro: {e}")
+        st.error(str(e))
