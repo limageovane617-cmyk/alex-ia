@@ -1,10 +1,13 @@
 import streamlit as st
 from google import genai
 
-st.set_page_config(page_title="Alex IA", page_icon="🤖")
+st.set_page_config(
+    page_title="Alex IA",
+    page_icon="🤖"
+)
 
 st.title("🤖 Alex IA")
-st.write("Sua IA usando o Google Gemini")
+st.write("Sua IA usando Google Gemini")
 
 api_key = st.text_input(
     "Digite sua chave da API Gemini:",
