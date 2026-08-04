@@ -4,7 +4,7 @@ from google import genai
 st.set_page_config(page_title="Alex IA", page_icon="🤖")
 
 st.title("🤖 Alex IA")
-st.write("Sua IA usando Google Gemini")
+st.write("Sua IA usando o Google Gemini")
 
 api_key = st.text_input(
     "Digite sua chave da API Gemini:",
@@ -19,7 +19,7 @@ if api_key:
 
         if st.button("Enviar") and pergunta:
             resposta = client.models.generate_content(
-                model="gemini-2.5-flash-lite",
+                model="gemini-2.5-flash",
                 contents=pergunta
             )
 
